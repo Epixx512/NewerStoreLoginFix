@@ -1,0 +1,9 @@
+Package: com.podpod123.storeloginfix
+Name: NewerStoreLoginFix
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Tweak to fix the Cannot connect to iTunes Store error by rewriting the request to another endpoint. Will not work on iOS 9+, untested on iOS 7-8.
+Maintainer: Pod <pod@podpod123.com>
+Author: Pod <pod@podpod123.com>
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 6.0), firmware (<< 9.0)
