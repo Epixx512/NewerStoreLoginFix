@@ -1,4 +1,3 @@
-#import <substrate.h>
 #import <Foundation/Foundation.h>
 
 @interface NewerStoreLoginFixProtocol : NSURLProtocol
@@ -22,8 +21,8 @@
 		NSURL *url = self.request.URL;
 		NSMutableURLRequest *newReq = [self.request mutableCopy];
 		if ([self.request.HTTPMethod isEqualToString:@"POST"] && [url.host hasSuffix:@"buy.itunes.apple.com"] && [url.path isEqualToString:@"/WebObjects/MZFinance.woa/wa/authenticate"]) {
-			[newReq setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-			newReq.URL = [NSURL URLWithString:@"https://auth.itunes.apple.com/auth/v1/native/fast"];
+			NSString *newURLString = [url.absoluteString stringByAppendingString:@"/"];
+			newReq.URL = [NSURL URLWithString:newURLString];
 		}
 		NSURLResponse *response = nil;
 		NSError *error = nil;
